@@ -38,9 +38,9 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">About Me!</div>
+                <div class="title">About {{$data['fullname']}}!</div>
                 <p>
-                  I like to make Laravel we apps!!
+                  I like to make Laravel web apps!! Email me at: {{$data['email']}}
                 </p>
             </div>
         </div>
