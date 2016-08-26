@@ -38,7 +38,10 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Welcome Everyone!</div>
+                <p>
+                  This is the begining of Laravel Journey
+                </p>
             </div>
         </div>
     </body>
