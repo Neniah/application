@@ -5,15 +5,15 @@ namespace App\Http\Controllers;
 class PagesController extends Controller {
 
   public function getIndex(){
-    
+    return view('pages.welcome');
   }
 
   public function getAbout(){
-    return "About Me!";
+    return view('pages.about');
   }
 
   public function getContact(){
-    return "Hello Contact Page";
+    return view('pages.contact');
   }
 
   public function postContact(){
