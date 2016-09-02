@@ -16,7 +16,12 @@
         {{ Form::label('body', 'Body') }}
         {{ Form::textarea('body', null, ['class' => 'form-control']) }}
       </p>
-      <div class="col-md-8">
+      <div class="">
+        {{ Form::submit('Save Changes', ['class' => 'btn btn-success btn-block']) }}
+      </div>
+    </div>
+
+      <div class="col-md-4">
         <div class="well">
           <dl class="dl-horizontal">
             <dt>Create At:</dt>
@@ -37,7 +42,6 @@
           </div>
         </div>
       </div>
-    </div>
     {!! Form::close() !!}
   </div> <!-- end fo row (form)!>
 
