@@ -7,9 +7,13 @@
   <div class="row">
     {!! Form::model($post, ['route' => ['posts.update', $post->id]]) !!}
     <div class="col-md-8">
-      <h1>{{ Form::text('title', null, ['class' => 'form-control']) }}</h1>
+
+      <h1>
+        {{ Form::label('title', 'Title') }}
+        {{ Form::text('title', null, ['class' => 'form-control']) }}</h1>
 
       <p class="lead">
+        {{ Form::label('body', 'Body') }}
         {{ Form::textarea('body', null, ['class' => 'form-control']) }}
       </p>
       <div class="col-md-8">
