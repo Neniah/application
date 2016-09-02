@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', '| All Posts');
+@section('title', '| All Posts')
 
 @section('content')
 
@@ -43,11 +43,9 @@
                 <td>
                   {{ $post->title }}
                 </td>
+                <td>{{ substr($post->body, 0, 50) }}{{ strlen($post->body) > 50 ? "..." : "" }}</td>
                 <td>
-                  $post->body
-                </td>
-                <td>
-                  $post->created_at
+                  {{ date('M j, Y', $post->created_at) }}
                 </td>
                 <td>
                   <a href="#" class="btn btn-default">View</a>
