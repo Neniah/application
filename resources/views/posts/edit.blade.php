@@ -5,12 +5,12 @@
 @section('content')
 
   <div class="row">
-    {!! Form::open() !!}
+    {!! Form::model($post, ['route' => ['posts.update', $post->id]]) !!}
     <div class="col-md-8">
-      <h1>{{ $post->title }}</h1>
+      <h1>{{ Form::text('title', null, ['class' => 'form-control']) }}</h1>
 
       <p class="lead">
-        {{ $post->body }}
+        {{ Form::textarea('body', null, ['class' => 'form-control']) }}
       </p>
       <div class="col-md-8">
         <div class="well">
@@ -34,7 +34,8 @@
         </div>
       </div>
     </div>
-  </div>
+    {!! Form::close() !!}
+  </div> <!-- end fo row (form)!>
 
 
-@stop
+@endsection
