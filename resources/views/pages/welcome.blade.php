@@ -16,37 +16,17 @@
 
       <div class="row">
         <div class="col-md-8">
+
+          @foreach($posts as $post)
           <div class="post">
-            <h3>Post Title</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis amet tenetur eum, consequuntur assumenda officiis quidem omnis placeat. Sequi ex fugiat reiciendis at eligendi inventore ad, odio magnam velit doloribus...</p>
+            <h3>{{ $post->title }}</h3>
+            <p>{{ substr($post->body, 0, 100) }}{{ strlen($post->body) > 100 ? '...' : '' }}</p>
             <a href="#" class="btn btn-primary">Read More</a>
           </div>
 
           <hr>
 
-          <div class="post">
-            <h3>Post Title</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis amet tenetur eum, consequuntur assumenda officiis quidem omnis placeat. Sequi ex fugiat reiciendis at eligendi inventore ad, odio magnam velit doloribus...</p>
-            <a href="#" class="btn btn-primary">Read More</a>
-          </div>
-
-          <hr>
-
-          <div class="post">
-            <h3>Post Title</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis amet tenetur eum, consequuntur assumenda officiis quidem omnis placeat. Sequi ex fugiat reiciendis at eligendi inventore ad, odio magnam velit doloribus...</p>
-            <a href="#" class="btn btn-primary">Read More</a>
-          </div>
-
-          <hr>
-
-          <div class="post">
-            <h3>Post Title</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis amet tenetur eum, consequuntur assumenda officiis quidem omnis placeat. Sequi ex fugiat reiciendis at eligendi inventore ad, odio magnam velit doloribus...</p>
-            <a href="#" class="btn btn-primary">Read More</a>
-          </div>
-
-          <hr>
+        @endforeach
         </div>
 
         <div class="col-md-3 col-md-offset-1">
