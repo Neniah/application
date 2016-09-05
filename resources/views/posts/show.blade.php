@@ -14,6 +14,10 @@
       <div class="col-md-8">
         <div class="well">
           <dl class="dl-horizontal">
+            <dt>URL Slug:</dt>
+            <dd>{{ $post->slug }}</dd>
+          </dl>
+          <dl class="dl-horizontal">
             <dt>Create At:</dt>
             <dd>{{ date('M d, Y h:ia', strtotime($post->created_at)) }}</dd>
           </dl>
