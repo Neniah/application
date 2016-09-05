@@ -15,7 +15,7 @@
         <div class="well">
           <dl class="dl-horizontal">
             <dt>URL Slug:</dt>
-            <dd>{{ $post->slug }}</dd>
+            <dd><a href="{{ url($post->slug) }}">URL</a></dd>
           </dl>
           <dl class="dl-horizontal">
             <dt>Create At:</dt>

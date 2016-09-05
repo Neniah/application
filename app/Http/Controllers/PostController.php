@@ -99,7 +99,7 @@ class PostController extends Controller
         //
         $this->validate($request, array(
                 'title' => 'required|max:255',
-                'slug' => 'required|alpha_dash'
+                'slug' => 'required|alpha_dash',
                 'body'  => 'required'
             ));
 
