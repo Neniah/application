@@ -14,7 +14,7 @@ class AddSlugToUsers extends Migration
     {
         //
         Schema::table('posts', function($table){
-          $table->string('slug');
+          $table->string('slug')->unique()->after('body');
         });
     }
 
