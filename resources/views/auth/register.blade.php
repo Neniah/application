@@ -9,7 +9,7 @@
       {!! Form::open() !!}
 
         {{ Form::label('name', 'Name:') }}
-        {{ Form::email('name', null, ['class' => 'form-control']) }}
+        {{ Form::text('name', null, ['class' => 'form-control']) }}
 
         {{ Form::label('email', 'Email:') }}
         {{ Form::email('email', null, ['class' => 'form-control']) }}
