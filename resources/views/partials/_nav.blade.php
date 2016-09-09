@@ -21,6 +21,7 @@
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        @if(Auth::check())
         <li class="dropdown">
           <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -31,6 +32,10 @@
             <li><a href="#">Logout</a></li>
           </ul>
         </li>
+        @else
+          <a href="{{ route('login') }}" class="btn btn-default">Login</a>
+
+        @endif
       </ul>
     </div>
     <!-- /.navbar-collapse -->
