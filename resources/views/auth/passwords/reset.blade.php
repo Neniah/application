@@ -4,24 +4,33 @@
 
 @section('content')
 
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <div class="panel panel-default">
-        <div class="panel-heading">Reset Password</div>
-        <div class="panel-body">
-          {!! Form::open(['url' => 'password/email', 'method' => 'POST']) !!}
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">Reset Password</div>
 
-          {{ Form::hidden('token', $token) }}
+				<div class="panel-body">
 
-          {{ Form::label('email', 'Email Address:') }}
-          {{ Form::email('email', $email, ['class' => 'form-control']) }}
+					{!! Form::open(['url' => 'password/reset', 'method' => "POST"]) !!}
 
-          {{ Form::submit('Reset Password', ['class' => 'btn btn-primary']) }}
+					{{ Form::hidden('token', $token) }}
 
-          {!! Form::close() !!}
-        </div>
-      </div>
-    </div>
-  </div>
+					{{ Form::label('email', 'Email Address:') }}
+					{{ Form::email('email', $email, ['class' => 'form-control']) }}
+
+					{{ Form::label('password', 'New Password:') }}
+					{{ Form::password('password', ['class' => 'form-control']) }}
+
+					{{ Form::label('password_confirmation', 'Confirm New Password:') }}
+					{{ Form::password('password_confirmation', ['class' => 'form-control']) }}
+
+					{{ Form::submit('Reset Password', ['class' => 'btn btn-primary']) }}
+
+					{!! Form::close() !!}
+
+				</div>
+			</div>
+		</div>
+	</div>
 
 @endsection

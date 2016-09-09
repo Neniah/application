@@ -29,4 +29,12 @@ class PasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
+    public function sendResetLinkEmail(){
+
+    }
+
+    public function reset(){
+      return view('auth/passwords/reset');
+    }
 }
