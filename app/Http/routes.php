@@ -10,9 +10,9 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 //Password Reset rotues
-Route::get('password/reset/{token}', 'Auth\PasswordController@showResetForm');
-Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
-Route::post('password/reset', 'Auth\PasswordController@reset');
+Route::get('passwords/reset/{token}', 'Auth\PasswordController@showResetForm');
+Route::post('passwords/email', 'Auth\PasswordController@sendResetLinkEmail');
+Route::post('passwords/reset', 'Auth\PasswordController@reset');
 
 Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])->where('slug', '[\w\d\-\_]+');
 Route::get('blog', ['uses' => 'BlogController@getIndex', 'as' => 'blog.index']);

@@ -16,7 +16,7 @@
 					</div>
 				@endif
 
-					{!! Form::open(['url' => 'password/email', 'method' => "POST"]) !!}
+					{!! Form::open(['url' => 'passwords/email', 'method' => "POST"]) !!}
 
 					{{ Form::label('email', 'Email Address:') }}
 					{{ Form::email('email', null, ['class' => 'form-control']) }}

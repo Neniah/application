@@ -11,7 +11,7 @@
 
 				<div class="panel-body">
 
-					{!! Form::open(['url' => 'password/reset', 'method' => "POST"]) !!}
+					{!! Form::open(['url' => 'passwords/reset', 'method' => "POST"]) !!}
 
 					{{ Form::hidden('token', $token) }}
 
