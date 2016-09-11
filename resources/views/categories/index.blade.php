@@ -19,7 +19,7 @@
           </tr>
         </thead>
         <tbody>
-          @foreach($categories as @category)
+          @foreach($categories as $category)
           <tr>
             <th>
               {{ $category->id }}

@@ -27,7 +27,7 @@
           ole="button" aria-haspopup="true" aria-expanded="false">Hello {{ Auth::user()->name }} <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{{route('posts.index')}}">Posts</a></li>
-            <li><a href="{{ url('categories.index') }}">Categories</a></li>
+            <li><a href="{{ route('categories.index') }}">Categories</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="{{ route('logout') }}">Logout</a></li>
           </ul>
