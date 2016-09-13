@@ -34,8 +34,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        return view('posts.create')->withCategories($categories);
+        $categories = Category::pluck('name', 'id');
+        return view('posts.create', compact('categories'));
     }
 
     /**

@@ -20,7 +20,7 @@
 				{{ Form::text('title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
 
 				{{ Form::label('category', 'Category:') }}
-				{{ Form::select() }}
+				{{ Form::select('category', $categories, array('class' => 'form-control')) }}
 
 				{{ Form::label('slug', 'Slug:') }}
 				{{ Form::text('slug', null, ['class' => 'form-control', 'required' => '', 'minlength' => '5', 'maxlength' => '255']) }}
