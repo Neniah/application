@@ -34,8 +34,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::pluck('name', 'id');
-        return view('posts.create', compact('categories'));
+       $categories = Category::all();
+       return view('posts.create')->withCategories($categories);
     }
 
     /**
@@ -51,7 +51,7 @@ class PostController extends Controller
                 'title' => 'required|max:255',
                 'body'  => 'required',
                 'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
-                'category_id' => 'required|integer'
+                'category_id' => 'required'
             ));
 
         // store in the database

@@ -19,9 +19,13 @@
 				{{ Form::label('title', 'Title:') }}
 				{{ Form::text('title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
 
-				{{ Form::label('category', 'Category:') }}
-				{{ Form::select('category', $categories, null, array('class' => 'form-control')) }}
-
+				{{ Form::label('category_id', 'Category:') }}
+				<select class="form-control" name="category_id">
+					@foreach($categories as $category)
+						<option value='{{ $category->id }}'>{{ $category->name }}</option>
+					@endforeach
+				</select>
+				
 				{{ Form::label('slug', 'Slug:') }}
 				{{ Form::text('slug', null, ['class' => 'form-control', 'required' => '', 'minlength' => '5', 'maxlength' => '255']) }}
 
