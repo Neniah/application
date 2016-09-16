@@ -5,18 +5,25 @@
 @section('content')
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-6">
       <h1>{{ $post->title }}</h1>
 
       <p class="lead">
         {{ $post->body }}
       </p>
-      <div class="col-md-8">
+    </div>
+      <div class="col-md-6">
         <div class="well">
           <dl class="dl-horizontal">
             <label>URL Slug:</label>
             <dd><a href="{{ route('blog.single', $post->slug) }}">{{ url($post->slug) }}</a></dd>
           </dl>
+
+          <dl class="dl-horizontal">
+            <label>Category:</label>
+            <dd>{{ $post->category->name }}</dd>
+          </dl>
+
           <dl class="dl-horizontal">
             <label>Create At:</label>
             <dd>{{ date('M d, Y h:ia', strtotime($post->created_at)) }}</dd>
@@ -48,7 +55,7 @@
 
         </div>
       </div>
-    </div>
+
   </div>
 
 @endsection
