@@ -91,8 +91,13 @@ class PostController extends Controller
     {
         // find the post in the database
         $post = Post::find($id);
+        $categories = Category::all();
+        $cats = array();
+        foreach($categories as $category){
+          $cats[$category->id] = $category->name;
+        }
         // return the view
-        return view('posts.edit')->withPost($post);
+        return view('posts.edit')->withPost($post)->withCategories($cats);
     }
 
     /**

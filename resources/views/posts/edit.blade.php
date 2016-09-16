@@ -12,6 +12,11 @@
         {{ Form::label('title', 'Title') }}
         {{ Form::text('title', null, ['class' => 'form-control']) }}</h1>
 
+        <p class="lead">
+          {{ Form::label('category_id', 'Category') }}
+          {{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
+        </p>
+
       <p class="lead">
         {{ Form::label('slug', 'Slug') }}
         {{ Form::text('slug', null, ['class' => 'form-control']) }}
