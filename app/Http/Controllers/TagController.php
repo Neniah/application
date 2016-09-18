@@ -24,15 +24,6 @@ class TagController extends Controller
         return view('tags.index')->withTags($tags);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -43,6 +34,14 @@ class TagController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, ['name' => 'required|max:255']);
+        $tag = new Tag;
+        $tag->name = $request->name;
+        $tag->save();
+
+        Session::flash('success', 'New Tag was successfully created!');
+
+        return redirect()->route('tags.index');
     }
 
     /**
