@@ -36,7 +36,8 @@ class PostController extends Controller
     public function create()
     {
        $categories = Category::all();
-       return view('posts.create')->withCategories($categories);
+       $tags = Tag::all();
+       return view('posts.create')->withCategories($categories)->withTags($tags);
     }
 
     /**
