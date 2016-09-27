@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use Session;
 use App\Category;
+use App\Tag;
 
 class PostController extends Controller
 {
