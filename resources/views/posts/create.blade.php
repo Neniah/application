@@ -3,9 +3,8 @@
 @section('title', '| Create New Post')
 
 @section('stylesheets')
-
 	{!! Html::style('css/parsley.css') !!}
-
+	{!! Html::style('css/select2.min.css') !!}
 @endsection
 
 @section('content')
@@ -25,7 +24,7 @@
 						<option value='{{ $category->id }}'>{{ $category->name }}</option>
 					@endforeach
 				</select>
-				
+
 				{{ Form::label('slug', 'Slug:') }}
 				{{ Form::text('slug', null, ['class' => 'form-control', 'required' => '', 'minlength' => '5', 'maxlength' => '255']) }}
 
@@ -41,7 +40,6 @@
 
 
 @section('scripts')
-
 	{!! Html::script('js/parsley.min.js') !!}
-
+	{!! Html::script('js/select2.min.js') !!}
 @endsection
