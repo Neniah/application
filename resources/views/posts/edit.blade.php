@@ -22,8 +22,8 @@
           {{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
         </p>
 
-        {{ Form::label('tags', 'Tags:', ['class' => 'form-control']) }}
-        {{ Form::select('tags[]', $tags, null, ['class' => 'select2-multi', 'multiple' => 'multiple']) }}
+        {{ Form::label('tags', 'Tags:') }}
+        {{ Form::select('tags[]', $tags, null, ['class' => 'form-control select2-multi', 'multiple' => 'multiple']) }}
 
       <p class="lead">
         {{ Form::label('slug', 'Slug') }}
@@ -69,5 +69,6 @@
 
   <script type="text/javascript">
     $('.select2-multi').select2();
+    $('.select2-multi').select2().val({!! json_encode($post->tags()->getRelatedIds()) !!}).trigger('change');
   </script>
 @endsection

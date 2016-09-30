@@ -149,6 +149,8 @@ class PostController extends Controller
 
         $post->save();
 
+        $post->tags()->sync($request->tags);
+
         Session::flash('success', 'This post was successfully saved!');
 
         return redirect()->route('posts.show', $post->id);
