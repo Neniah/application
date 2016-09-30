@@ -48,7 +48,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        //dd($request);
         // validate the data
         $this->validate($request, array(
                 'title' => 'required|max:255',
@@ -66,6 +66,8 @@ class PostController extends Controller
         $post->category_id = $request->category_id;
 
         $post->save();
+
+        $post->tags()->sync($request->tags, false);
 
         Session::flash('success', 'The blog post was successfully save!');
 
