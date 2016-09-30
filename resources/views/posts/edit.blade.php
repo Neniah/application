@@ -22,6 +22,9 @@
           {{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
         </p>
 
+        {{ Form::label('tags', 'Tags:', ['class' => 'form-control']) }}
+        {{ Form::select('tags[]', $tags, null, ['class' => 'select2-multi', 'multiple' => 'multiple']) }}
+
       <p class="lead">
         {{ Form::label('slug', 'Slug') }}
         {{ Form::text('slug', null, ['class' => 'form-control']) }}
@@ -57,10 +60,14 @@
         </div>
       </div>
     {!! Form::close() !!}
-  </div> <!-- end fo row (form)!>
+  </div> <!-- end fo row (form)! -->
 
 @endsection
 
 @section('scripts')
 	{!! Html::script('js/select2.min.js') !!}
+
+  <script type="text/javascript">
+    $('.select2-multi').select2();
+  </script>
 @endsection
