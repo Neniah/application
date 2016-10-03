@@ -38,6 +38,12 @@
                 <th>{{ $post->id }}</th>
                 <td>{{ $post->title }}</td>
                   <td>{{ $post->title }}</td>
+                  <td>
+                    @foreach($post->tags as $tag)
+                        <span class="label label-default">{{ $tag->name }}</span>
+                    @endforeach
+                  </td>
+                  <td><a href="{{ route('post.show', $post->id) }}" class="btn btn-default btn-sm">View</a></td>
               </tr>
             @endforeach
           </tbody>
