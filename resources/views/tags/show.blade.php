@@ -9,7 +9,7 @@
         <h1>{{ $tag->name }} Tag <small>{{$tag->posts->count()}}</small></h1>
       </div>
       <div class="col-md-4">
-        <a href="#" class="btn btn-primary pull-right btn-block">Edit</a>
+        <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-primary pull-right btn-block">Edit</a>
       </div>
     </div>
 
@@ -43,7 +43,7 @@
                         <span class="label label-default">{{ $tag->name }}</span>
                     @endforeach
                   </td>
-                  <td><a href="{{ route('post.show', $post->id) }}" class="btn btn-default btn-sm">View</a></td>
+                  <td><a href="{{ route('posts.show', $post->id) }}" class="btn btn-default btn-sm">View</a></td>
               </tr>
             @endforeach
           </tbody>
