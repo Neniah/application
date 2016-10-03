@@ -55,6 +55,7 @@ class TagController extends Controller
     public function show($id)
     {
         //
+        $tag = Tag::find($id);
     }
 
     /**
