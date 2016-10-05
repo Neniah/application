@@ -8,7 +8,7 @@
           <h1>Contact Me</h1>
           <hr>
           <form>
-            <div class="form-group">
+            <div class="form-group" action="{{ url('contact') }}" method="POST">
               <label name="email">Email:</label>
               <input id="email" name="email" class="form-control">
             </div>
