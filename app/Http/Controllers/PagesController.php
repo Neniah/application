@@ -34,15 +34,15 @@ class PagesController extends Controller {
       ]);
 
     $data = array(
-      'email' = $request->email,
-      'subject' = $request->subject,
-      'bodyMessage' = $request->message
+      'email' => $request->email,
+      'subject' => $request->subject,
+      'bodyMessage' => $request->message
     );
 
     Mail::send('emails.contact', $data, function($message) use ($data){
       $message->from($data['email']);
-      $message->to();
-      $message->subject();
+      $message->to('maria.lobillo.santos@gmail.com');
+      $message->subject($data['subject']);
     });
   }
 
