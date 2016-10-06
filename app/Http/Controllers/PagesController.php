@@ -36,7 +36,7 @@ class PagesController extends Controller {
     $data = array(
       'email' = $request->email,
       'subject' = $request->subject,
-      'bodymessage' = $request->message
+      'bodyMessage' = $request->message
     );
 
     Mail::send('emails.contact', $data, function(){
