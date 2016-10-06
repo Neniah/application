@@ -33,8 +33,14 @@ class PagesController extends Controller {
         'message' => 'min:3',
       ]);
 
-    Mail::send('view', $data, function(){
-      
+    $data = array(
+      'email' = $request->email,
+      'subject' = $request->subject,
+      'bodymessage' = $request->message
+    );
+
+    Mail::send('emails.contact', $data, function(){
+
     });
   }
 
