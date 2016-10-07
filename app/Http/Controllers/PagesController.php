@@ -45,6 +45,10 @@ class PagesController extends Controller {
       $message->to('maria.lobillo.santos@gmail.com');
       $message->subject($data['subject']);
     });
+
+    Session::flash('success', 'Your Email was Sent!');
+
+    return redirect()->url('/');
   }
 
 
