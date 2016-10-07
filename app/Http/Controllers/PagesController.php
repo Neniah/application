@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Mail;
+use Session;
 
 class PagesController extends Controller {
 
