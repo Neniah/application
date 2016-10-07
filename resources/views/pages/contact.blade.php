@@ -9,7 +9,7 @@
           <hr>
           <form>
             <div class="form-group" action="{{ url('contact') }}" method="POST">
-              {{ csrf_token() }}
+              {{ csrf_field() }}
               <label name="email">Email:</label>
               <input id="email" name="email" class="form-control">
             </div>
