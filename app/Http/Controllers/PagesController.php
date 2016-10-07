@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use Mail;
 
 class PagesController extends Controller {
 
