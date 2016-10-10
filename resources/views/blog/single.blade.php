@@ -1,6 +1,6 @@
 @extends('main')
-
-@section('title', "| $post->title ")
+<?php $titleTag= htmlspecialchars($post->title); ?>
+@section('title', "| $titleTag ")
 
 @section('content')
 
@@ -17,5 +17,7 @@
 
     </div>
   </div>
+
+  <div class="row"></div>
 
 @endsection
